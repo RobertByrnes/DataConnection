@@ -2,7 +2,7 @@
     "name": "robertbyrnes/dataconnection",
     "description": "Database connection dependency using PDO for PHP 7^.",
     "version": "1.0",
-    "license": "GPL-3.0",
+    "license": "GNU General Public License v3.0",
     "require": {
 
     },
