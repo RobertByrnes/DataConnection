@@ -4,8 +4,25 @@ require __DIR__ . '\..\vendor\autoload.php';
 
 class DataConnection extends Environment
 {
-    protected $dB;
-    public $message;
+    /**
+     * Object of PDO class.
+     *
+     * @var object
+     */
+    private $dB;
+
+    /**
+     * Class messages for debugging.
+     *
+     * @var string
+     */
+    private $message;
+
+    /**
+     * A stdCLass object for use in type hinted functions.
+     *
+     * @var stdClass
+     */
     private $returnObject;
 
     public function __construct()
@@ -44,8 +61,9 @@ class DataConnection extends Environment
      * it returns an object of stdClass.
      *
      * @param string $query
+     * @param $array
      * @param boolean $returnType
-     * @return
+     * @return object, array, or bool
      */
     public function preparedQueryRow(string $query, array $array=NULL, bool $returnType=FALSE)
     {
@@ -99,10 +117,11 @@ class DataConnection extends Environment
      * it returns an object of stdClass.
      *
      * @param string $query
+     * @param array $array
      * @param boolean $returnType
-     * @return mixed
+     * @return object, array or bool
      */
-    public function preparedQueryMany($query, $array=NULL, bool $returnType=FALSE)
+    public function preparedQueryMany(string $query, $array=NULL, bool $returnType=FALSE)
     {
         try
         {
@@ -149,15 +168,16 @@ class DataConnection extends Environment
     }
 
     /**
-     * Prepare an INSERT statement with bound parameters, returns boolean or error message.
+     * Prepare an INSERT statement with bound parameters, returns bool or error message string.
+     * 
      * @example ("INSERT INTO table (column, column, column) VALUES (?, ?, ?)",
      * array('column' => $var, 'column' => $var, 'column' => $var));
      * @param string $query
      * @param array $params
-     * @return boolean
+     * @return bool
      * @return integer
      */
-    public function preparedInsert($query, array $params=NULL, bool $countRequired=FALSE)
+    public function preparedInsert(string $query, array $params=NULL, bool $countRequired=FALSE)
     {
         try
         {
@@ -179,7 +199,7 @@ class DataConnection extends Environment
         }
     }
 
-    public function preparedInsertGetCount($query, array $params=NULL)
+    public function preparedInsertGetCount(string $query, array $params=NULL)
     {
         return $this->preparedInsert($query, $params, TRUE);
     }
