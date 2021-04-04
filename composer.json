@@ -1,0 +1,13 @@
+{
+    "name": "robertbyrnes/dataconnection",
+    "description": "Database connection dependency using PDO for PHP 7^.",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "" : "classes/"
+        }
+    }
+
+}
