@@ -1,4 +1,5 @@
 <?php
+Namespace RBDev\DataConnection;
 
 require __DIR__ . '\..\vendor\autoload.php';
 

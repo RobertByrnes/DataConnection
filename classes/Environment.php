@@ -1,4 +1,5 @@
 <?php
+Namespace RBDev\DataConnection\Environment;
 
 Abstract Class Environment
 {
