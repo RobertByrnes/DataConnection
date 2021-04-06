@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'RBDev\\DataConnection\\Environment\\' => array($baseDir . '/classes'),
+    '' => array($baseDir . '/classes'),
 );

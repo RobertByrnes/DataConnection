@@ -1,6 +1,4 @@
 <?php
-Namespace RBDev\DataConnection\Environment;
-
 Abstract Class Environment
 {
     protected function checkLocation() : array

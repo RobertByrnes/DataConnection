@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RBDev\\DataConnection\\Environment\\" : "classes/"
+            "" : "classes/"
         }
     }
 
