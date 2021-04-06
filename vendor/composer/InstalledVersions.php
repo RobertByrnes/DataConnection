@@ -25,8 +25,8 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0',
-    'version' => '1.0.0.0',
+    'pretty_version' => '1.0-dev',
+    'version' => '1.0.0.0-dev',
     'aliases' => 
     array (
     ),
@@ -37,8 +37,8 @@ private static $installed = array (
   array (
     'robertbyrnes/dataconnection' => 
     array (
-      'pretty_version' => '1.0',
-      'version' => '1.0.0.0',
+      'pretty_version' => '1.0-dev',
+      'version' => '1.0.0.0-dev',
       'aliases' => 
       array (
       ),
