@@ -2,6 +2,9 @@
 
 require __DIR__ . '\..\vendor\autoload.php';
 
+/**
+ * Class Dataconnection extends Environment. PDO database class.
+ */
 class DataConnection extends Environment
 {
     /**
@@ -199,7 +202,14 @@ class DataConnection extends Environment
         }
     }
 
-    public function preparedInsertGetCount(string $query, array $params=NULL)
+    /**
+     * Piggy backs on the prepared insert function return the affected row count.
+     *
+     * @param string $query
+     * @param array $params
+     * @return int
+     */
+    public function preparedInsertGetCount(string $query, array $params=NULL) : int
     {
         return $this->preparedInsert($query, $params, TRUE);
     }
