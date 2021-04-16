@@ -1,11 +1,14 @@
 <?php
 Abstract Class Environment
 {
+    public string $path = '/../../../../private/local.ini';
+
     protected function checkLocation() : array
     {
-        if (preg_match('/wamp64|repositories/i', $_SERVER['DOCUMENT_ROOT']))
+        if (preg_match('/wamp64|repositories/i', realpath(__FILE__)))
         {
-            $env = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'/../../../private/local.ini');
+            (file_exists(__DIR__.$this->path)) ? $env = parse_ini_file(__DIR__.$this->path) : $env = parse_ini_file(__DIR__.$this->path.'/../../..');
+           
             if ($env['name'] === 'local')
             {
                 $GLOBALS['environment'] = 'TRUE';
