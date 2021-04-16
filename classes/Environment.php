@@ -7,7 +7,7 @@ Abstract Class Environment
     {
         if (preg_match('/wamp64|repositories/i', realpath(__FILE__)))
         {
-            (file_exists(__DIR__.$this->path)) ? $env = parse_ini_file(__DIR__.$this->path) : $env = parse_ini_file(__DIR__.$this->path.'/../../..');
+            (file_exists(__DIR__.$this->path)) ? $env = parse_ini_file(__DIR__.$this->path) : $env = parse_ini_file(__DIR__.'/../../..'.$this->path);
            
             if ($env['name'] === 'local')
             {
